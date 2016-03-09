@@ -16,6 +16,7 @@ import shoppingCar.ShoppingCart;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -26,7 +27,7 @@ public class TestShoppingCart {
     Discount discountStrategy;
 
     @Before
-    public void init(){
+    public void init() {
         Product apple = new Product("Apple", new BigDecimal(200));
         Product orange = new Product("Orange", new BigDecimal(1000));
 
@@ -48,8 +49,7 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1200.0\n"
                 + "Discount :  0.0\n"
-                + "Total price with discount : 1200.0\n"
-                ;
+                + "Total price with discount : 1200.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
@@ -66,14 +66,13 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1200.0\n"
                 + "Discount :  120.0\n"
-                + "Total price with discount : 1080.0\n"
-                ;
+                + "Total price with discount : 1080.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
     @Test
     public void testWithoutSaleAndWithChangeDiscountMoreMinimum() {
-        discountStrategy = new ChangeDiscount(new BigDecimal(1000),new BigDecimal(10));
+        discountStrategy = new ChangeDiscount(new BigDecimal(1000), new BigDecimal(10));
         saleStrategy = new WithoutSale();
 
         shoppingCart.setDiscountStrategy(discountStrategy);
@@ -84,14 +83,13 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1200.0\n"
                 + "Discount :  120.0\n"
-                + "Total price with discount : 1080.0\n"
-                ;
+                + "Total price with discount : 1080.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
     @Test
     public void testWithoutSaleAndWithChangeDiscountLessMinimum() {
-        discountStrategy = new ChangeDiscount(new BigDecimal(1400),new BigDecimal(10));
+        discountStrategy = new ChangeDiscount(new BigDecimal(1400), new BigDecimal(10));
         saleStrategy = new WithoutSale();
 
         shoppingCart.setDiscountStrategy(discountStrategy);
@@ -102,8 +100,7 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1200.0\n"
                 + "Discount :  0.0\n"
-                + "Total price with discount : 1200.0\n"
-                ;
+                + "Total price with discount : 1200.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
@@ -122,8 +119,7 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1201.0\n"
                 + "Discount :  0.0\n"
-                + "Total price with discount : 1201.0\n"
-                ;
+                + "Total price with discount : 1201.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
@@ -141,14 +137,13 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1201.0\n"
                 + "Discount :  120.1\n"
-                + "Total price with discount : 1080.9\n"
-                ;
+                + "Total price with discount : 1080.9\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
     @Test
     public void testGiftSaleAndChangeDiscountMoreMinimum() {
-        discountStrategy = new ChangeDiscount(new BigDecimal(1000),new BigDecimal(10));
+        discountStrategy = new ChangeDiscount(new BigDecimal(1000), new BigDecimal(10));
         saleStrategy = new GiftSale(getGifts());
 
         shoppingCart.setDiscountStrategy(discountStrategy);
@@ -160,14 +155,13 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1201.0\n"
                 + "Discount :  120.1\n"
-                + "Total price with discount : 1080.9\n"
-                ;
+                + "Total price with discount : 1080.9\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
     @Test
     public void testGiftSaleAndChangeDiscountLessMinimum() {
-        discountStrategy = new ChangeDiscount(new BigDecimal(1400),new BigDecimal(10));
+        discountStrategy = new ChangeDiscount(new BigDecimal(1400), new BigDecimal(10));
         saleStrategy = new GiftSale(getGifts());
 
         shoppingCart.setDiscountStrategy(discountStrategy);
@@ -179,16 +173,15 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1201.0\n"
                 + "Discount :  0.0\n"
-                + "Total price with discount : 1201.0\n"
-                ;
+                + "Total price with discount : 1201.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
-    public Map<Product,Product> getGifts(){
-        Map<Product,Product> giftProduct = new HashMap<>();
+    public Map<Product, Product> getGifts() {
+        Map<Product, Product> giftProduct = new HashMap<>();
         Product apple = new Product("Apple", new BigDecimal(200));
         Product tea = new Product("Tea", new BigDecimal(1.00));
-        giftProduct.put(apple,tea);
+        giftProduct.put(apple, tea);
         return giftProduct;
     }
 
@@ -205,8 +198,7 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1190.0\n"
                 + "Discount :  0.0\n"
-                + "Total price with discount : 1190.0\n"
-                ;
+                + "Total price with discount : 1190.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
@@ -223,15 +215,14 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1190.0\n"
                 + "Discount :  119.0\n"
-                + "Total price with discount : 1071.0\n"
-                ;
+                + "Total price with discount : 1071.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
 
     @Test
     public void testProductSaleAndWithChangeDiscountMoreMinimum() {
-        discountStrategy = new ChangeDiscount(new BigDecimal(1000),new BigDecimal(10));
+        discountStrategy = new ChangeDiscount(new BigDecimal(1000), new BigDecimal(10));
         saleStrategy = new ProductSale(getSaleProducts());
 
         shoppingCart.setDiscountStrategy(discountStrategy);
@@ -242,14 +233,13 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1190.0\n"
                 + "Discount :  119.0\n"
-                + "Total price with discount : 1071.0\n"
-                ;
+                + "Total price with discount : 1071.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
     @Test
     public void testProductSaleAndWithChangeDiscountLessMinimum() {
-        discountStrategy = new ChangeDiscount(new BigDecimal(1400),new BigDecimal(10));
+        discountStrategy = new ChangeDiscount(new BigDecimal(1400), new BigDecimal(10));
         saleStrategy = new ProductSale(getSaleProducts());
 
         shoppingCart.setDiscountStrategy(discountStrategy);
@@ -260,16 +250,15 @@ public class TestShoppingCart {
                 + "Product: Orange Price: 1000.0\n"
                 + "\nTotal price : 1190.0\n"
                 + "Discount :  0.0\n"
-                + "Total price with discount : 1190.0\n"
-                ;
+                + "Total price with discount : 1190.0\n";
         assertThat(actualCheck, is(expectCheck));
     }
 
-    public Map<Product,Product> getSaleProducts(){
-        Map<Product,Product> giftProduct = new HashMap<>();
+    public Map<Product, Product> getSaleProducts() {
+        Map<Product, Product> giftProduct = new HashMap<>();
         Product apple = new Product("Apple", new BigDecimal(200));
         Product appleSale = new Product("Apple", new BigDecimal(190));
-        giftProduct.put(apple,appleSale);
+        giftProduct.put(apple, appleSale);
         return giftProduct;
     }
 }
