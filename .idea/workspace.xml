@@ -141,11 +141,11 @@
       <file leaf-file-name="TestProductSale.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/testSell/TestProductSale.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.082474224">
-              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.4742268">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#849#858#0" expanded="true" />
+                <element signature="e#848#857#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -866,7 +866,7 @@
       <created>1457509917421</created>
       <option name="number" value="Default" />
       <updated>1457509917421</updated>
-      <workItem from="1457509918543" duration="5536000" />
+      <workItem from="1457509918543" duration="5992000" />
     </task>
     <task id="LOCAL-00001" summary="version 1.0">
       <created>1457511394785</created>
@@ -934,7 +934,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5536000" />
+    <option name="totallyTimeSpent" value="5992000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1166,11 +1166,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/testSell/TestProductSale.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.082474224">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.4742268">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#849#858#0" expanded="true" />
+            <element signature="e#848#857#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -23,7 +23,6 @@ public class TestGiftSale {
         Product orange = new Product("Orange", new BigDecimal(1000));
         Product tea = new Product("Tea", new BigDecimal(1.00));
 
-
         sale.put(apple,tea);
         Sale giftSale = new GiftSale(sale);
 
