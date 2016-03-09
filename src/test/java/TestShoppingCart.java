@@ -261,8 +261,8 @@ public class TestShoppingCart {
     public Map<Product,Product> getSaleProducts(){
         Map<Product,Product> giftProduct = new HashMap<>();
         Product apple = new Product("Apple", new BigDecimal(200));
-        Product appleSale = new Product("Apple", new BigDecimal(190));
-        giftProduct.put(apple,appleSale);
+        Product appleWithSale = new Product("Apple", new BigDecimal(190));
+        giftProduct.put(apple,appleWithSale);
         return giftProduct;
     }
 }
