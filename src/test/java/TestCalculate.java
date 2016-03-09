@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class TestCalculate {
 
     @Test
-    public void calculateTotalCost() {
+    public void testCalculateTotalCost() {
         List<Product> shoppingCart = new ArrayList<>();
         shoppingCart.add(new Product("Tea", new BigDecimal(200)));
         shoppingCart.add(new Product("Milk", new BigDecimal(120)));
