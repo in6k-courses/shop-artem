@@ -53,6 +53,8 @@ public class ShoppingCart {
     }
     private void applySell() {
         shoppingCarWithSale = saleStrategy.calculateSale(shoppingCar);
+//        getSumOfProducts();
+//        getAllSumWithSale();
     }
 
     private void applyDiscount() {
