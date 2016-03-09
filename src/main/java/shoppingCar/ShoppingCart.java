@@ -12,8 +12,8 @@ public class ShoppingCart {
 
     private Discount discountStrategy;
     private Sale saleStrategy;
+    private List<Product> shoppingCarWithSale;
     private List<Product> shoppingCar = new ArrayList<Product>();
-    private List<Product> shoppingCarWithSale = new ArrayList<Product>();
     private BigDecimal sumOfProducts = new BigDecimal(0.0);
     private BigDecimal sumOfDiscount = new BigDecimal(0.0);
     private BigDecimal sumOfProductsWithDiscount = new BigDecimal(0.0);
@@ -32,8 +32,7 @@ public class ShoppingCart {
         applyDiscount();
 
         check += "\n";
-        for (int i = 0; i < shoppingCarWithSale.size(); i++) {
-            Product productWithSale = shoppingCarWithSale.get(i);
+        for (Product productWithSale : shoppingCarWithSale) {
             check += "Product: " + productWithSale.getProductName() + " Price: " + productWithSale.getPrice().doubleValue() + "\n";
         }
         check += "\n";
@@ -45,16 +44,13 @@ public class ShoppingCart {
         return check;
     }
 
-
     public void printCheck() {
         String check = generateCheck();
         System.out.println(check);
-
     }
+
     private void applySell() {
         shoppingCarWithSale = saleStrategy.calculateSale(shoppingCar);
-//        getSumOfProducts();
-//        getAllSumWithSale();
     }
 
     private void applyDiscount() {
@@ -72,25 +68,16 @@ public class ShoppingCart {
         sumOfProductsWithDiscount = sumOfProducts.subtract(sumOfDiscount);
     }
 
-    public BigDecimal getSumOfProducts() {
-        return sumOfProducts;
-    }
 
     public void addProductToShoppingCar(Product product) {
         shoppingCar.add(product);
     }
 
-    public Discount getDiscountStrategy() {
-        return discountStrategy;
-    }
 
     public void setDiscountStrategy(Discount discountStrategy) {
         this.discountStrategy = discountStrategy;
     }
 
-    public Sale getSaleStrategy() {
-        return saleStrategy;
-    }
 
     public void setSaleStrategy(Sale saleStrategy) {
         this.saleStrategy = saleStrategy;
