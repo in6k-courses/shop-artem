@@ -1,21 +1,14 @@
-import discount.ChangeDiscount;
-import discount.Discount;
-import discount.PermanentDiscount;
-import discount.WithoutDiscount;
+import discount.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import products.Product;
-import salls.GiftSale;
-import salls.ProductSale;
-import salls.Sale;
-import salls.WithoutSale;
+import salls.*;
 import shoppingCar.ShoppingCart;
 
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 

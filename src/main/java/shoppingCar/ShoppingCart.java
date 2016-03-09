@@ -5,8 +5,7 @@ import products.Product;
 import salls.Sale;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ShoppingCart {
 
@@ -15,7 +14,7 @@ public class ShoppingCart {
     private List<Product> shoppingCarWithSale;
     private List<Product> shoppingCar = new ArrayList<Product>();
     private BigDecimal sumOfProducts = new BigDecimal(0.0);
-    private BigDecimal sumOfDiscount = new BigDecimal(0.0);
+    private BigDecimal sumOfDiscounts = new BigDecimal(0.0);
     private BigDecimal sumOfProductsWithDiscount = new BigDecimal(0.0);
 
     public ShoppingCart() {
@@ -27,17 +26,17 @@ public class ShoppingCart {
     }
 
     public String generateCheck() {
-        String check = "";
         applySell();
         applyDiscount();
 
+        String check = "";
         check += "\n";
         for (Product productWithSale : shoppingCarWithSale) {
             check += "Product: " + productWithSale.getProductName() + " Price: " + productWithSale.getPrice().doubleValue() + "\n";
         }
         check += "\n";
         check += "Total price : " + sumOfProducts.doubleValue() + "\n";
-        check += "Discount :  " + sumOfDiscount.doubleValue() + "\n";
+        check += "Discount :  " + sumOfDiscounts.doubleValue() + "\n";
         getSumOfProductsWithDiscount();
         check += "Total price with discount : " + sumOfProductsWithDiscount.doubleValue() + "\n";
 
@@ -55,7 +54,7 @@ public class ShoppingCart {
 
     private void applyDiscount() {
         calculateAllSum();
-        sumOfDiscount = discountStrategy.calculateDiscount(sumOfProducts);
+        sumOfDiscounts = discountStrategy.calculateDiscount(sumOfProducts);
 
     }
 
@@ -65,7 +64,7 @@ public class ShoppingCart {
     }
 
     private void getSumOfProductsWithDiscount(){
-        sumOfProductsWithDiscount = sumOfProducts.subtract(sumOfDiscount);
+        sumOfProductsWithDiscount = sumOfProducts.subtract(sumOfDiscounts);
     }
 
 

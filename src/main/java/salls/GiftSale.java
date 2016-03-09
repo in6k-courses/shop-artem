@@ -18,9 +18,9 @@ public class GiftSale extends Sale {
         for (Product productInShopingCar : allProducts) {
 
             if (saleProducts.containsKey(productInShopingCar)) {
-                Product sell = saleProducts.get(productInShopingCar);
+                Product saleProduct = saleProducts.get(productInShopingCar);
                 selectedProductsInShoppingCarWithSale.add(productInShopingCar);
-                selectedProductsInShoppingCarWithSale.add(sell);
+                selectedProductsInShoppingCarWithSale.add(saleProduct);
             } else {
                 selectedProductsInShoppingCarWithSale.add(productInShopingCar);
             }
@@ -36,7 +36,7 @@ public class GiftSale extends Sale {
         return saleProducts;
     }
 
-    public void removeProduct(Product sellProduct) {
+    public void removeProductFromSale(Product sellProduct) {
         saleProducts.remove(sellProduct);
     }
 

@@ -2,8 +2,7 @@ package salls;
 
 import products.Product;
 
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ProductSale extends Sale {
 
@@ -17,8 +16,8 @@ public class ProductSale extends Sale {
         for (Product productInShopingCar : allProducts) {
 
             if (saleProducts.containsKey(productInShopingCar)) {
-                Product sell = saleProducts.get(productInShopingCar);
-                selectedProductsInShoppingCarWithSale.add(sell);
+                Product saleProduct = saleProducts.get(productInShopingCar);
+                selectedProductsInShoppingCarWithSale.add(saleProduct);
             } else {
                 selectedProductsInShoppingCarWithSale.add(productInShopingCar);
             }

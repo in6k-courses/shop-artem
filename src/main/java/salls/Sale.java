@@ -2,10 +2,7 @@ package salls;
 
 import products.Product;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public abstract class Sale {
 
@@ -18,11 +15,7 @@ public abstract class Sale {
         saleProducts.put(sellProduct, giftProduct);
     }
 
-    public Map<Product, Product> getSellProducts() {
-        return saleProducts;
-    }
-
-    public void removeProduct(Product sellProduct) {
+    public void removeProductFromSale(Product sellProduct) {
         saleProducts.remove(sellProduct);
     }
 
