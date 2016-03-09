@@ -26,8 +26,8 @@ public class TestShoppingCart {
         Product orange = new Product("Orange", new BigDecimal(1000));
 
         shoppingCart = new ShoppingCart();
-        shoppingCart.addProductToShoppingCar(apple);
-        shoppingCart.addProductToShoppingCar(orange);
+        shoppingCart.addProductToShoppingCart(apple);
+        shoppingCart.addProductToShoppingCart(orange);
     }
 
     @Test
@@ -271,7 +271,7 @@ public class TestShoppingCart {
     @Test
     public void testAddProductToShoppingCart() {
         Product apple = new Product("Apple", new BigDecimal(200));
-        List<Product> actualShoppingCart = shoppingCart.getShoppingCar();
+        List<Product> actualShoppingCart = shoppingCart.getShoppingCart();
 
         assertThat(apple, isIn(actualShoppingCart));
     }

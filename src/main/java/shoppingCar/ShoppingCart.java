@@ -11,8 +11,8 @@ public class ShoppingCart {
 
     private Discount discountStrategy;
     private Sale saleStrategy;
-    private List<Product> shoppingCarWithSale;
-    private List<Product> shoppingCar = new ArrayList<Product>();
+    private List<Product> shoppingCartWithSale;
+    private List<Product> shoppingCart = new ArrayList<Product>();
     private BigDecimal sumOfProducts = new BigDecimal(0.0);
     private BigDecimal sumOfDiscounts = new BigDecimal(0.0);
     private BigDecimal sumOfProductsWithDiscount = new BigDecimal(0.0);
@@ -31,7 +31,7 @@ public class ShoppingCart {
 
         String check = "";
         check += "\n";
-        for (Product productWithSale : shoppingCarWithSale) {
+        for (Product productWithSale : shoppingCartWithSale) {
             check += "Product: " + productWithSale.getProductName() + " Price: " + productWithSale.getPrice().doubleValue() + "\n";
         }
         check += "\n";
@@ -44,7 +44,7 @@ public class ShoppingCart {
     }
 
     private void applySell() {
-        shoppingCarWithSale = saleStrategy.calculateSale(shoppingCar);
+        shoppingCartWithSale = saleStrategy.calculateSale(shoppingCart);
     }
 
     private void applyDiscount() {
@@ -53,7 +53,7 @@ public class ShoppingCart {
     }
 
     private void calculateAllSum() {
-        Calculate calculateAllSum = new Calculate(shoppingCarWithSale);
+        Calculate calculateAllSum = new Calculate(shoppingCartWithSale);
         sumOfProducts = calculateAllSum.calculateTotalCost();
     }
 
@@ -62,8 +62,8 @@ public class ShoppingCart {
     }
 
 
-    public void addProductToShoppingCar(Product product) {
-        shoppingCar.add(product);
+    public void addProductToShoppingCart(Product product) {
+        shoppingCart.add(product);
     }
 
 
@@ -76,7 +76,7 @@ public class ShoppingCart {
         this.saleStrategy = saleStrategy;
     }
 
-    public List<Product> getShoppingCar() {
-        return shoppingCar;
+    public List<Product> getShoppingCart() {
+        return shoppingCart;
     }
 }

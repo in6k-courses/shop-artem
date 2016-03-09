@@ -33,16 +33,16 @@ public class Main {
         Product microwave = new Product("Microwave", new BigDecimal(1500));
         Product teapot = new Product("Teapot", new BigDecimal(291));
 
-        ShoppingCart shoppingCar = new ShoppingCart(changeDiscount,giftSell);
-        shoppingCar.addProductToShoppingCar(apple);
-        shoppingCar.addProductToShoppingCar(orange);
-        shoppingCar.addProductToShoppingCar(kiwi);
-        shoppingCar.addProductToShoppingCar(tv);
-        shoppingCar.addProductToShoppingCar(mobile);
-        shoppingCar.addProductToShoppingCar(microwave);
-        shoppingCar.addProductToShoppingCar(teapot);
+        ShoppingCart shoppingCart = new ShoppingCart(changeDiscount,giftSell);
+        shoppingCart.addProductToShoppingCart(apple);
+        shoppingCart.addProductToShoppingCart(orange);
+        shoppingCart.addProductToShoppingCart(kiwi);
+        shoppingCart.addProductToShoppingCart(tv);
+        shoppingCart.addProductToShoppingCart(mobile);
+        shoppingCart.addProductToShoppingCart(microwave);
+        shoppingCart.addProductToShoppingCart(teapot);
 
-        System.out.println(shoppingCar.generateCheck());
+        System.out.println(shoppingCart.generateCheck());
 
 
 
