@@ -43,11 +43,6 @@ public class ShoppingCart {
         return check;
     }
 
-    public void printCheck() {
-        String check = generateCheck();
-        System.out.println(check);
-    }
-
     private void applySell() {
         shoppingCarWithSale = saleStrategy.calculateSale(shoppingCar);
     }
