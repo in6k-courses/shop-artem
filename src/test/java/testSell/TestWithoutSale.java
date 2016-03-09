@@ -2,6 +2,7 @@ package testSell;
 
 import products.Product;
 import org.junit.Test;
+import salls.Sale;
 import salls.WithoutSale;
 
 import java.math.BigDecimal;
@@ -19,7 +20,7 @@ public class TestWithoutSale {
 
     @Test
     public void testPermanentSell() {
-        WithoutSale discount = new WithoutSale();
+        Sale giftSale = new WithoutSale();
 
         Product apple = new Product("Apple", new BigDecimal(200));
         Product orange = new Product("Orange", new BigDecimal(1000));
@@ -32,7 +33,7 @@ public class TestWithoutSale {
         expect.add(apple);
         expect.add(orange);
 
-        actual = discount.calculateSale(products);
+        actual = giftSale.calculateSale(products);
         assertThat(actual, is(expect));
     }
 }

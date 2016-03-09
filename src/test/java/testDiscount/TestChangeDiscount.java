@@ -14,23 +14,23 @@ public class TestChangeDiscount {
 
     BigDecimal actual;
     BigDecimal expect;
-    Discount discount;
+    Discount changeDiscount;
 
     @Before
     public void init(){
-        discount = new ChangeDiscount(new BigDecimal(2000), new BigDecimal(2));
+        changeDiscount = new ChangeDiscount(new BigDecimal(2000), new BigDecimal(2));
     }
 
     @Test
     public void testWithSumMoreThanMinSumDiscount() {
-        actual = discount.calculateDiscount(new BigDecimal(3000));
+        actual = changeDiscount.calculateDiscount(new BigDecimal(3000));
         expect = new BigDecimal(60);
         assertThat(actual, is(closeTo(expect,new BigDecimal(0.01))));
     }
 
     @Test
     public void testWithSumLessThanMinSumDiscount() {
-        actual = discount.calculateDiscount(new BigDecimal(1000));
+        actual = changeDiscount.calculateDiscount(new BigDecimal(1000));
         expect = new BigDecimal(0);
         assertThat(actual, is(closeTo(expect,new BigDecimal(0.01))));
     }

@@ -17,8 +17,8 @@ public class TestWithoutDiscount {
 
     @Test
     public void testPermanentDiscountMore() {
-        Discount discount = new WithoutDiscount();
-        actual = discount.calculateDiscount(new BigDecimal(1000.00));
+        Discount withoutDiscount = new WithoutDiscount();
+        actual = withoutDiscount.calculateDiscount(new BigDecimal(1000.00));
         expect = new BigDecimal(0.00);
         assertThat(actual, is(closeTo(expect,new BigDecimal(0.01))));
     }

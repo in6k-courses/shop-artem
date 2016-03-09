@@ -15,8 +15,8 @@ public class TestPermanentDiscount {
 
     @Test
     public void testPermanentDiscount() {
-        Discount discount = new PermanentDiscount(new BigDecimal(10.00));
-        actual = discount.calculateDiscount(new BigDecimal(200.00));
+        Discount permanentDiscount = new PermanentDiscount(new BigDecimal(10.00));
+        actual = permanentDiscount.calculateDiscount(new BigDecimal(200.00));
         expect = new BigDecimal(20.00);
         assertThat(actual, is(closeTo(expect,new BigDecimal(0.01))));
     }
