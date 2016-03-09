@@ -50,7 +50,6 @@ public class ShoppingCart {
     private void applyDiscount() {
         calculateAllSum();
         sumOfDiscounts = discountStrategy.calculateDiscount(sumOfProducts);
-
     }
 
     private void calculateAllSum() {
