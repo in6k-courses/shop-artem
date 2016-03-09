@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 import java.util.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+import static org.hamcrest.Matchers.isIn;
 
 public class TestShoppingCart {
 
@@ -265,4 +266,13 @@ public class TestShoppingCart {
         giftProduct.put(apple,appleWithSale);
         return giftProduct;
     }
+
+    @Test
+    public  void testAddProductToShoppingCart(){
+        Product apple = new Product("Apple", new BigDecimal(200));
+        List<Product> actualShoppingCart = shoppingCart.getShoppingCar();
+
+        assertThat(apple,isIn(actualShoppingCart));
+    }
+
 }

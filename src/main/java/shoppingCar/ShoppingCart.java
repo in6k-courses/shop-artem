@@ -63,7 +63,7 @@ public class ShoppingCart {
         sumOfProducts = calculateAllSum.calculateTotalCost();
     }
 
-    private void getSumOfProductsWithDiscount(){
+    private void getSumOfProductsWithDiscount() {
         sumOfProductsWithDiscount = sumOfProducts.subtract(sumOfDiscounts);
     }
 
@@ -82,4 +82,7 @@ public class ShoppingCart {
         this.saleStrategy = saleStrategy;
     }
 
+    public List<Product> getShoppingCar() {
+        return shoppingCar;
+    }
 }
